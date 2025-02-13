@@ -82,12 +82,12 @@ Today, optimization is used in a variety of fields from economics to mathematics
 
 If you’d like to learn more about current techniques and applications of optimization, feel free to explore the other sections of this website.  
 
-   .. figure:: images/Timeline/TimelineTNR.png
+   .. figure:: images/Timeline/TimelineNew.png
       :width: 500px
       :alt: timeline for the history of optimization
       :align: center
 
-      :captiontext:`Chronological Timeline of critical events in optimization history`
+      :captiontext:`Chronological timeline of critical events in optimization history.`
 
       ..
 
