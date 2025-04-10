@@ -9,3 +9,6 @@ sphinxcontrib-youtube
 git+https://github.com/smdogroup/sphinxcontrib-geogebra.git
 # jupyterlite-sphinx
 git+https://github.com/aaronyicongfu/jupyterlite-sphinx.git@main#egg=jupyterlite-sphinx
+sphinxcontrib.quizdown
+sphinx_exercise
+sphinx_togglebutton
