@@ -18,6 +18,7 @@ This first set of posts serves as a preliminary introduction to optimization, in
     OutreachBlogPosts/objective
     OutreachBlogPosts/constraints
     OutreachBlogPosts/formulating
+    OutreachBlogPosts/principles
     
 Here is an in-browser python environment where you can test your favorite
 python code live!

@@ -1,2 +1,19 @@
 {% extends "!layout.html" %}
 {% set css_files = css_files + [ "_static/css/outreach_styles.css" ] %}
+
+{% block extrahead %}
+{{ super() }}
+<script type="text/javascript" src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+<script>ggbAppletId = []; </script>
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+<script>
+    window.addEventListener("load", function () {
+        for (var i in ggbAppletId) {
+            ggbAppletId[i].inject(i);
+        }
+    });
+</script>
+{% endblock %}
