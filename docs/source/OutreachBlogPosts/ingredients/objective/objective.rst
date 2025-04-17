@@ -8,13 +8,13 @@
 Objective Functions
 ===================
 
-Now that you have an introduction to optimization and have learned some of the key history behind its development, let’s discuss one of the most important pieces of any optimization problem: the :boldblue:`objective function`.
+Now that you have had an introduction to optimization and have learned some of the history of the field, this post will discuss one of the most important pieces of any optimization problem: the :boldblue:`objective function`.
 
 No matter the discipline or field, an objective function is a core component of every optimization problem. :boldblue:`Qualitatively, one way to think of an objective function is that it is a goal or a target that you are trying to achieve`. 
 
-Let’s start  with a simple  example to give a clearer idea as to what an objective function is. Consider this scenario: it’s Monday morning, and the school day starts at 8 AM. Your goal, or objective, is to make it to school on time! This is an example of a :boldblue:`Boolean objective` because there are two ways to answer the question about whether you made it to school on time: *true* or *false*.  
+Let’s start with a simple example to give a clear idea of an objective function. Consider this scenario: it is Monday morning, and the school day starts at 8 AM. Your goal, or objective, is to make it to school on time! This is an example of a :boldblue:`Boolean objective` because there are two ways to answer the question about whether you made it to school on time: *true* or *false*.  
 
-While making it to school on time is important, this scenario can be reframed to further illustrate some additional optimization principles.  Another way to think about the commute to school is that you want to take as little time as possible in the morning from when you wake up until you arrive at school. Then, this allows you to sleep longer in the morning to make sure you are well rested for all your classes. 
+While making it to school on time is important, this scenario can be reframed to further illustrate some additional optimization principles. Another way to think about the commute to school is that you want to take as little time as possible in the morning from when you wake up until you arrive at school. Then, this allows you to sleep longer in the morning to make sure you are well rested for all your classes. 
 
 In this new scenario, the goal, or objective function, is the total amount of time that it takes to get to school, and this is the quantity to minimize. This is an example of a :boldblue:`continuous objective` since the time it takes to get to school is contained within a range of different values. 
 
@@ -22,12 +22,12 @@ The trip to school will often take between 30 minutes to 1 hour, but it could ta
 
 Most often in numerical optimization, the objective function is created in such a way that it is a quantitative value or number that can be minimized. This is the convention in optimization, but one can easily maximize a function using the same techniques by minimizing the negative of the function. 
 
-Going back to our second example, where we want to minimize the total time it takes to get to school, let’s introduce some mathematical terminology for how to represent objective functions in optimization. 
+Going back to the second example, where the goal is to minimize the total time it takes to get to school, let’s introduce some mathematical terminology for how to represent objective functions in optimization. 
 
-Here, :math:`T` represents the function that determines how much time it takes to get to school once you wake up. 
+Here, :math:`T` represents the function that determines how much time it takes to get to school once you wake up. If you have never seen the three-bar equal sign before, this simply means that:math:`T` is identical to or defined as the total time to get to school. 
 
 .. Note the extra .. after caption text is important to void a legend entry
-.. figure:: images/ObjectiveFunctions/1_ObjFuncs.svg
+.. figure:: images/1_ObjFuncs.svg
    :figwidth: 100 %
    :scale: 20 %
    :alt: objective function for example problem
@@ -39,9 +39,9 @@ Here, :math:`T` represents the function that determines how much time it takes t
 
 Thinking about your own actions to get to school in the morning, the amount of time is dependent on, or a function of, factors like the mode of transportation you take, what you are going to make for breakfast, and whether you picked out an outfit the night before. These things are called the :boldblue:`design variables` for your problem, and they directly influence the amount of time it takes to get to school. 
 
-Let’s  represent these design variables as :math:`x`, which is an array that contains all of the design variables in the problem. Now, the objective function can be rewritten as shown below.
+Let’s represent these design variables as :math:`x`, which is an array that contains all the design variables in the problem. Now, the objective function can be rewritten as shown below.
 
-.. figure:: images/ObjectiveFunctions/2_ObjFuncDVs.svg
+.. figure:: images/2_ObjFuncDVs.svg
    :figwidth: 100 %
    :scale: 20 %
    :alt: objective function, which is influenced by the design variables, for example problem
@@ -53,7 +53,7 @@ Let’s  represent these design variables as :math:`x`, which is an array that c
 
 Finally, since we want to minimize the total time it takes to get to school, the objective function and optimization statement are officially written as:
 
-.. figure:: images/ObjectiveFunctions/3_OptStatement.svg
+.. figure:: images/3_OptStatement.svg
    :figwidth: 100 %
    :scale: 15 %
    :alt: optimization statement for example problem
@@ -67,7 +67,7 @@ From a notation point of view, the :math:`x` below the word “min” means that
 
 Now that we have defined the problem, consider three design variables that influence the amount of time it takes to get to school: what to cook for breakfast, whether an outfit was picked out the night before, and the mode of transportation to get to school. For simplicity, each set of design variables will be denoted by the predetermined options inside the curly braces {}. Next to each choice in the set, the number of minutes that each option adds to the objective function is given. 
 
-.. figure:: images/ObjectiveFunctions/4_Choices.svg
+.. figure:: images/4_Choices.svg
    :figwidth: 100 %
    :scale: 15 %
    :alt: design variable choices for example problem
@@ -79,7 +79,7 @@ Now that we have defined the problem, consider three design variables that influ
 
 Using these sets of design variables, we can choose a couple of combinations to consider the total amount of time it takes to get to school. 
 
-.. figure:: images/ObjectiveFunctions/5_SampleChoices.svg
+.. figure:: images/5_SampleChoices.svg
    :figwidth: 100 %
    :scale: 15 %
    :alt: a couple of design variable choices for example problem
@@ -89,14 +89,14 @@ Using these sets of design variables, we can choose a couple of combinations to 
    
    ..
 
-From these two choices, Choice 1 is better than Choice 2 since it is six minutes faster! However, while Choice 1 is the shortest of these two options, is it truly the best? Can you find a better choice using the sets above? Click the drop down to see the answer for this example. 
+From these two choices, Choice 1 is better than Choice 2 since it is six minutes faster! However, while Choice 1 is the shortest of these two options, is it truly the best? Can you find a better choice using the sets above? Click the dropdown to see the answer for this example. 
 
 .. dropdown:: Test Your Knowledge: What is the optimal choice of design variables for this example? 
    :icon: question
 
-   Looking back at the design variable sets above, it is apparent that a choice can be made that results in a shorter amount of time than Choices 1 and 2. With this choice for the design variables, the total amount of time it would take to get to school is 13 minutes, which is the optimal time in this scenario!  
+   Looking back at the design variable sets above, it is apparent that a choice can be made that results in a shorter amount of time than Choices 1 and 2. With the following choice for the design variables, the total amount of time it would take to get to school is 13 minutes, which is the optimal time in this scenario!  
 
-   .. figure:: images/ObjectiveFunctions/6_OptimalChoice.svg
+   .. figure:: images/6_OptimalChoice.svg
       :figwidth: 100 %
       :scale: 15 %
       :alt: optimal choice of design variables for example problem
@@ -106,7 +106,7 @@ From these two choices, Choice 1 is better than Choice 2 since it is six minutes
 
       ..
 
-In this simple example, since each choice does not influence the others at all, the minimum amount of time can be determined by minimizing each contribution in the three sets above. If another design variable were added to the problem, such as exercising in the morning, then minimizing the time associated with this choice and adding it to the time from the optimal set above would still minimize the problem. *In more complicated, realistic applications, the design variables and their impact on the objective function might be coupled, so it may be difficult to say by observation what is in the optimum set*. To learn how to solve these more complicated and general problems, keep reading the sections ahead! 
+In this simple example, since each choice does not influence the others at all, the minimum amount of time can be determined by minimizing each contribution in the three sets above. If another design variable were added to the problem, such as exercising in the morning, then minimizing the time associated with this activity and adding it to the time from the optimal set above would still minimize the problem. *In more complicated, realistic applications, the design variables and their impact on the objective function might be coupled, so it may be difficult to say by observation what is in the optimum set*. To learn how to solve these more complicated and general problems, keep reading the sections ahead! 
 
 Key Takeaways:
 ```````````````

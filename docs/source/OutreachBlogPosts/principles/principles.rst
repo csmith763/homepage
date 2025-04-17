@@ -17,7 +17,7 @@ Concept of a Minimizer
 
 To explain the concept of a :boldblue:`minimizer`, let’s consider a simple example of a ball that can roll along a curved track, as shown below. The ball is constrained to always be on the surface of the track, and it must remain within the two walls on either side of the track. The ball starts at the top of the hill, as shown with the blue, solid circle. Then, it might roll and settle at either one of the positions shown with the red, hatched circles. If you consider both, the :boldblue:`global minimizer` is the position on the left, as this is when the ball reaches its lowest point across all options. However, the position on the right is an example of a :boldblue:`local minimizer`, as this position is the lowest point within a small region around the point. For optimization problems, we want to find the :boldblue:`global minimizer`, as this corresponds to the smallest value of the objective function. However, it is possible that we conclude at a :boldblue:`local minimizer`, such as when the ball moves to the position on the right. 
 
-.. figure:: images/Principles_of_Opt/1_MovingBallExample.svg
+.. figure:: images/1_MovingBallExample.svg
    :figwidth: 100 %
    :alt: example of a ball on a curved track, demonstrating the idea of global and local minimizers
    :align: center
@@ -63,7 +63,7 @@ Consider again the example where we want to minimize the ball’s height. Recall
 
 Now, in all three of the examples that have been explored so far, particularly in the two applets, you may have noticed something interesting that happens to the :boldblue:`gradient` at :boldblue:`minimizers` (or maximizers). If you have not noticed this yet, feel free to scroll back and up and experiment before continuing! 
 
-.. figure:: images/Principles_of_Opt/2_MovingBallExample_Gradient.svg
+.. figure:: images/2_MovingBallExample_Gradient.svg
    :figwidth: 100%
    :alt: example of a ball on a curved track with a prompt to consider the relationship between minimizers and the gradient value
    :align: center

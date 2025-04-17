@@ -5,7 +5,7 @@
    :class: captiontext
 
 =======================
-History of Optimization
+Motivating Optimization
 =======================
 What comes to mind when you think of the word “optimize?” Officially, the Merriam-Webster dictionary defines optimize as "to make as perfect, effective, or functional as possible" [1]. This is a very formal definition for the word, but the concept of optimization is much more intuitive than the definition suggests and is something that everyone does throughout their daily lives. 
 
@@ -38,7 +38,7 @@ Now consider a more practical example from a time in recent history. During Worl
 
 Wald observed that the planes that sustained damage in the engine and nose were not returning from combat. The initial sample size that the engineers were investigating did not consider these planes, so the proposed solution of adding armor to the fuselage and wings would not drastically increase the survivability. To correct this, they had to expand their sample size. Then, the engineers were able to place additional armor in the engine and nose regions. In terms of optimization, they maximized the survivability of the planes with constraints on the total cost and amount of material.
 
-.. figure:: images/Timeline/plane.png
+.. figure:: images/plane.png
       :figwidth: 100 %
       :alt: Surivorship bias plane example
       :scale: 20 %
@@ -51,7 +51,7 @@ Wald observed that the planes that sustained damage in the engine and nose were 
 
 Although the fundamental idea of optimization is simple and almost automatic in human nature, it is difficult to precisely say when the concept was fully realized as a mathematical application. From a mathematical perspective, it is believed to originate as early as the ancient Greek civilization with Archimedes finding the maximum of a parabola. Others give credit to Sir Isaac Newton for his study of minimal resistance in which he sought a shape that minimized drag with potential applications for ship designs.  
 
-.. figure:: images/Timeline/Combined_People.png
+.. figure:: images/Combined_People.png
       :width: 800px
       :alt: Images of Archimedes (left) and Sir Isaac Newton (right)
       :align: center
@@ -67,7 +67,7 @@ In the modern day, optimization is an ever-growing field with numerous practical
 The idea of a fully-fledged :boldblue:`optimization problem` and :boldblue:`constraints` may seem unfamiliar at first, but we will delve deeper into specifics in later sections. If you would like to learn more about current techniques and applications of optimization, feel free to explore the other sections of this website!
 
 
-   .. figure:: images/Timeline/TimelineNew.png
+   .. figure:: images/TimelineNew.png
       :width: 500px
       :alt: timeline for the history of optimization
       :align: center
@@ -76,8 +76,8 @@ The idea of a fully-fledged :boldblue:`optimization problem` and :boldblue:`cons
 
       ..
 
-References:
-```````````````
+References
+``````````
 
 [1] `Meriam-Webster Dictionary <https://www.merriam-webster.com/dictionary/optimize>`_
 
