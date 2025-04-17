@@ -41,8 +41,12 @@ extensions = [
     "sphinx_tabs.tabs",
     "sphinx_design",
     "jupyterlite_sphinx",
-    #"sphinxcontrib.geogebra",
-    "sphinx_subfigure"
+    "sphinxcontrib.geogebra",
+    # "sphinx_subfigure"
+    "sphinx.ext.autodoc",
+    "sphinxcontrib.quizdown", 
+    "sphinx_togglebutton", 
+    "sphinx_exercise"
 ]
 # fmt: on
 

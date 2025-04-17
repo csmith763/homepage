@@ -7,37 +7,36 @@
 =======================
 History of Optimization
 =======================
-What comes to mind when you think of the word “optimize?”  
+What comes to mind when you think of the word “optimize?” Officially, the Merriam-Webster dictionary defines optimize as "to make as perfect, effective, or functional as possible" [1]. This is a very formal definition for the word, but the concept of optimization is much more intuitive than the definition suggests and is something that everyone does throughout their daily lives. 
 
-Suppose you’ve gone to the store and wanted to buy as many snacks as possible for 20$. There are a lot of different kinds of snacks in the store at various price points so you must try and figure out which snacks you want and for the lowest possible total price. This is optimization in a nutshell! To put it in official terms, the Merriam-Webster dictionary defines it as making a situation or use of a resource as perfect, effective, or functional as possible.  
+As an initial example, suppose you have gone to the store and that you want to buy as many snacks as possible for 20 dollars. There are numerous snacks in the store at various price points, so you must try to determine which snacks you want the most and how to lower the total cost. This is the idea of optimization, and it is related to an everyday task like going to the grocery store.  
 
-Humans have been optimizing for centuries, as it can apply to almost any situation that eases day-to-day life. The idea of optimization can be traced to older societies where efficient survival was important. This could take the form of a farmer maximizing the harvest using limited land, or a hunter minimizing exerted energy while hunting. Optimization even extends past human nature as we’ve discovered that plants and animals also try to find the best approach to achieving a task. Take a look at the video below to get an idea of how optimization exists even in nature.  
+From a historical perspective, humans have been optimizing for millennia, as it can apply to almost any situation that eases day-to-day life. Optimization can be traced to ancient societies, where efficient survival was important. This could take the form of a farmer maximizing the harvest using limited land or a hunter minimizing exerted energy. Optimization even extends beyond human beings into nature, as it has been discovered that plants and animals also try to find the best approach to accomplish a task. Take a look at the video below to get an idea of how optimization exists even in nature.  
 
 .. youtube:: HyzT5b0tNtk
    :align: center
-
-Nowadays, we've moved past survival and looking more at cost efficiency in modern society.  
 
 From these examples and definitions, the concept of optimization can be narrowed down to determining the minimum (or maximum) of some set of requirements to fulfill another set of requirements.  
 
 .. dropdown:: Definition: Minimum
    :icon: light-bulb
    
-   The minimum is usually thought of as the least of something. However, the least amount of anything in the real world must be 0 since it is impossible to have a negative amount of a physical quantity. For example, the least amount of candy you can get on Halloween is zero pieces (unless you have a sneaky sibling who steals your candy). Therefore, we must place limits or constraints on our parameters to determine what a realistic minimum or maximum can be. We’ll review these concepts in more detail later.
+   The minimum is usually thought of as the least of something. However, the least amount of anything in the real world must be zero, since it is impossible to have a negative amount of a physical quantity. For example, the least amount of candy you can get on Halloween is zero pieces. Therefore, we must place limits or constraints on our parameters to help determine what a realistic minimum or maximum can be. We will review these concepts in more detail in later sections.
 
-.. dropdown:: Test Your Knowledge: Think of some ways you have potentially used optimization in your life, they don’t necessarily have to be complex situations
+.. dropdown:: Test Your Knowledge: Think of some ways you have potentially used optimization in your life. Note that they do not necessarily have to be complex situations!
    :icon: question
 
-   - Taking a shortcut through your neighborhood to get to your friend's house  
+   Consider some additional examples of optimization in these simple situations.
 
-   - Picking a breakfast that you can finish quickly in the morning to get to school on time   
+   - Taking a shortcut through your neighborhood to get to your friend's house
 
-   - Making a pillow fort as big as possible with a limited number of pillows.    
+   - Picking a breakfast that you can finish quickly in the morning to get to school on time
 
-.. QUESTION: how do we want this to appear on the website
-For a real-life example take note of the following:   
-      During WWII, engineers were deciding where to add armor to planes so that they would survive attacks. Planes that returned from often had bullet holes in the fuselage and wings so one would naturally assume that is where they are most often hit and should be most protected. However, a statistician Abraham Wald disagreed, determining that the armor should be placed on the engine and nose where there were little too few bullets. Before revealing the reason, think about why Wald was correct. 
-      Simply, the planes that had bullet holes in the engine and nose were getting shot down and never returned. The sample size that the engineers were looking at did not consider the planes that never survive battle.  
+   - Making a pillow fort as big as possible with a limited number of pillows
+
+Now consider a more practical example from a time in recent history. During World War II, engineers were deciding where to add armor to planes so that they would have a greater chance of surviving in dogfights. Planes that returned from battles often had bullet holes in the fuselage and wing, so one would naturally assume that is where they are most often hit. As a result, the initial logic was that these locations are where engineers should add more armor. However, a statistician Abraham Wald disagreed, determining that the armor should be placed on the engine and nose where there were fewer instances of damage. Before revealing the reason, think about why Wald was correct. 
+
+Wald observed that the planes that sustained damage in the engine and nose were not returning from combat. The initial sample size that the engineers were investigating did not consider these planes, so the proposed solution of adding armor to the fuselage and wings would not drastically increase the survivability. To correct this, they had to expand their sample size. Then, the engineers were able to place additional armor in the engine and nose regions. In terms of optimization, they maximized the survivability of the planes with constraints on the total cost and amount of material.
 
 .. figure:: images/Timeline/plane.png
       :figwidth: 100 %
@@ -46,61 +45,49 @@ For a real-life example take note of the following:
       :align: center
       :target: https://en.wikipedia.org/wiki/Survivorship_bias
 
-      :captiontext:`Distribution of where planes that returned typically had bullet holes. (Credit Wikipedia [2])`
+      :captiontext:`Distribution of Damaged Aircraft during World War II (Credit Wikipedia [3])`
 
       ..
 
-Planes that returned from battle often had bullet holes in the fuselage and wings so it was assumed that that’s where they were most often hit and should have the most protection. However, a statistician Abraham Wald disagreed, determining that the armor should be placed on the engine and nose where there were few bullet holes. Before revealing the reason, think about Wald’s reasoning.  
-
-The planes that had bullet holes in the engine and nose were getting shot down as opposed to the ones that returned. The sample size that the engineers were looking at did not consider the planes that never survived the battle. To successfully optimize, they had to expand their sample size and were then able to place armor only where it was needed. In terms of optimization, they maximized the survivability of the planes with the constraints of cost and materials.   
-
-Although the basis of the idea of optimization is simple and almost automatic in human nature, it is difficult to precisely say when the concept was fully realized as a mathematical application. It can be traced back to as early as the Greeks with Archimedes finding the max of a parabola. Others give credit to Sir Isaac Newton for his study of minimal resistance in which he sought a shape that minimized drag with potential applications to ship designs.  
+Although the fundamental idea of optimization is simple and almost automatic in human nature, it is difficult to precisely say when the concept was fully realized as a mathematical application. From a mathematical perspective, it is believed to originate as early as the ancient Greek civilization with Archimedes finding the maximum of a parabola. Others give credit to Sir Isaac Newton for his study of minimal resistance in which he sought a shape that minimized drag with potential applications for ship designs.  
 
 .. figure:: images/Timeline/Combined_People.png
       :width: 800px
       :alt: Images of Archimedes (left) and Sir Isaac Newton (right)
       :align: center
       
-      :captiontext:`Left Archimedes (Credit Getty Images [3]). Right Isaac Newton (Credit Wikipedia [4])`
+      :captiontext:`Key Figures in Optimization - Archimedes (left, Credit Getty Images [4]) and Sir Isaac Newton (right, Credit Wikipedia [5])`
 
       ..
 
-The origins of optimization were put into text by Leonis Vitalyevich in 1939 with his monograph “Mathematical Methods for Organization and Planning of Production.”  
-
-However, the actual application of optimization was used on a wide scale during World War II. 
-
-.. dropdown:: Test Your Knowledge: Think about why optimization is a key tool during wars
-   :icon: question
+The origins of optimization were put into text by Leonis Vitalyevich in 1939 with his monograph “Mathematical Methods for Organization and Planning of Production.” However, the actual application of optimization was used on a wide scale throughout World War II, as motivated with the previous example.
    
-   Essentially, officials realized that a key factor in fighting the war was the coordination of energy and resources. The calculations required to solve the problems posed by the US military often required many resources and time. With the advent of electronic computing, formal large-scale optimization problems with constraints became feasible.  
-   
-Optimization is an ever-growing field with numerous practical applications. A current and widely known example of a system using optimization to function is ChatGPT. The AI uses various techniques to comb through mass amounts of data and output answers quickly. Essentially, ChatGPT operates using optimization by reducing the time taken to provide an answer to the user. 
+In the modern day, optimization is an ever-growing field with numerous practical applications, ranging from mathematics and engineering to economics and marketing. A current and widely known example of a system using optimization to function is ChatGPT. The AI uses various techniques to comb through mass amounts of data and output answers quickly. Essentially, ChatGPT operates using optimization by reducing the time taken to provide an answer to the user. For a more detailed review of notable events in optimization history, you can look at the timeline in the image below.
 
-The idea of a fully-fledged :boldblue:`optimization problem` and :boldblue:`constraints` may seem unfamiliar at first, but we’ll delve deeper into specifics in later sections.  
+The idea of a fully-fledged :boldblue:`optimization problem` and :boldblue:`constraints` may seem unfamiliar at first, but we will delve deeper into specifics in later sections. If you would like to learn more about current techniques and applications of optimization, feel free to explore the other sections of this website!
 
-Today, optimization is used in a variety of fields from economics to mathematics to engineering. It stretches from how businesses operate to yield the highest profits with the lost cost margins to building faster jets that use the least amount of fuel.   
-
-If you’d like to learn more about current techniques and applications of optimization, feel free to explore the other sections of this website.  
 
    .. figure:: images/Timeline/TimelineNew.png
       :width: 500px
       :alt: timeline for the history of optimization
       :align: center
 
-      :captiontext:`Chronological timeline of critical events in optimization history.`
+      :captiontext:`Chronological Timeline of Notable Events in Optimization History`
 
       ..
 
 References:
 ```````````````
 
-[1] `YouTube BBC News <https://www.youtube.com/watch?v=HyzT5b0tNtk&t=1s>`_
+[1] `Meriam-Webster Dictionary <https://www.merriam-webster.com/dictionary/optimize>`_
 
-[2] `Surivorship Bias Plane <https://en.wikipedia.org/wiki/Survivorship_bias>`_
+[2] `YouTube BBC News <https://www.youtube.com/watch?v=HyzT5b0tNtk&t=1s>`_
 
-[3] `Archimedes <https://www.biography.com/scholars-educators/a43249494/who-discovered-pi-archimedes-of-syracuse>`_
+[3] `Surivorship Bias Plane <https://en.wikipedia.org/wiki/Survivorship_bias>`_
 
-[4] `Isaac Newton <https://en.wikipedia.org/wiki/Isaac_Newton>`_
+[4] `Archimedes <https://www.biography.com/scholars-educators/a43249494/who-discovered-pi-archimedes-of-syracuse>`_
+
+[5] `Isaac Newton <https://en.wikipedia.org/wiki/Isaac_Newton>`_
 
 
 
