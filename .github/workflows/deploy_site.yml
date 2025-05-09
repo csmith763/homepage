@@ -21,6 +21,12 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true  # This helps enable Pages if not already enabled
+
+       - name: Prepare site content
+        run: |
+          mkdir -p build
+          cp index.html build/
+          cp -r quiz build/
       
       # Add your build steps here
       
