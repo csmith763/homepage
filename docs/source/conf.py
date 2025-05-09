@@ -40,7 +40,7 @@ extensions = [
     "sphinxcontrib.youtube",   # $ pip install sphinxcontrib-youtube
     "sphinx_tabs.tabs",
     "sphinx_design",
-    "jupyterlite_sphinx",
+    #"jupyterlite_sphinx",
     "sphinxcontrib.geogebra",
     # "sphinx_subfigure"
     "sphinx.ext.autodoc",

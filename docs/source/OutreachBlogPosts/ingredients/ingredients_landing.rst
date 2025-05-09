@@ -10,3 +10,4 @@ This is the landing page for the optimization key ingredients section. THIS IS I
     objective/objective
     constraints/constraints
     formulating/formulating
+    quiz/quiz

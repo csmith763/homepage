@@ -86,3 +86,112 @@ So, from a high-level perspective, when optimizing, we want to move the design p
 
    Consider once more the example of the ball on the track. In this image, there are two minimizers: one on the left side of the hill and one on the right. What happens if the ball ends up at the point on the right? This point is still a minimizer, so the gradient will be zero. However, as we can see graphically, this is not the global minimizer for the problem, which means that we have not found the best solution. For many problems, the design space cannot be visualized like this, so it can be hard to determine if a minimizer is the global minimizer. However, for :boldblue:`convex functions`, there is a guarantee that a local minimizer is the global minimizer, as there is only one for the problem! As a result, :boldblue:`convex optimization` is a special subset of optimization where the goal is to create these :boldblue:`convex functions` so that global minimizers can be found. 
 
+
+
+---------------------
+ Quiz
+---------------------
+
+.. admonition:: Q1: What does it mean when a point is called a "minimizer" of a function?
+   :class: dropdown
+
+
+      .. raw:: html
+
+         <form class="quiz-form" data-answer="It is where the function reaches its minimum possible value">
+           <label><input type="radio" name="q1" value="It is where the function reaches its minimum possible value"> It is where the function reaches its minimum possible value</label><br>
+           <label><input type="radio" name="q1" value="Where there is zero value of the function"> Where there is zero value of the function</label><br>
+           <label><input type="radio" name="q1" value="This is where the function is changing from decreasing to increasing"> This is where the function is changing from decreasing to increasing</label><br>
+           <label><input type="radio" name="q1" value="It's where the function intersects with the x-axis"> It's where the function intersects with the x-axis</label><br>
+           <br>
+           <button type="button" onclick="submitAnswer(this)">Submit Answer</button>
+          <p class="feedback"></p>
+        </form>
+
+---
+
+
+.. admonition:: Q2: In gradient descent optimization, how is the gradient used?
+   :class: dropdown
+    
+
+      .. raw:: html
+
+         <form class="quiz-form" data-answer="To achieve a minimum, we move in the opposite direction of the gradient">
+            <label><input type="radio" name="q2" value="To find a maximum, we move in the direction of the gradient"> To find a maximum, we move in the direction of the gradient</label><br>
+            <label><input type="radio" name="q2" value="To achieve a minimum, we move in the opposite direction of the gradient"> To achieve a minimum, we move in the opposite direction of the gradient</label><br>
+            <label><input type="radio" name="q2" value="Random number generator"> To determine critocal points, we set the gradient to zero</label><br>
+            <label><input type="radio" name="q2" value="To determine the second derivative of the gradient"> To determine the second derivative of the gradient</label><br>
+            <br>
+            <button type="button" onclick="submitAnswer(this)">Submit Answer</button>
+            <p class="feedback"></p>
+         </form>
+
+---
+
+
+.. admonition:: Q3: In optimization, if we reach a point where the gradient equals zero, this point is:
+   :class: dropdown
+
+   
+   
+
+      .. raw:: html
+
+         <form class="quiz-form" data-answer="all the above">
+            <label><input type="radio" name="q3" value="a minimum"> a minimum</label><br>
+            <label><input type="radio" name="q3" value="a maximum"> a maximum</label><br>
+            <label><input type="radio" name="q3" value=" saddle point"> a saddle point</label><br>
+            <label><input type="radio" name="q3" value="all the above"> all the above</label><br>
+            <br>
+            <button type="button" onclick="submitAnswer(this)">Submit Answer</button>
+            <p class="feedback"></p>
+         </form>
+
+---
+
+
+.. admonition:: Q4: In optimization problems, when can you say that a local minimum is also a global minimum ?
+   :class: dropdown
+
+    
+
+      .. raw:: html
+
+         <form class="quiz-form" data-answer="When the function is concave">
+            <label><input type="radio" name="q4" value="When the function is concave"> When the function is concave</label><br>
+            <label><input type="radio" name="q4" value="When the function is convex">When the function is convex</label><br>
+            <label><input type="radio" name="q4" value="The optimal solution is where the objective function intersects the origin"> The optimal solution is where the objective function intersects the origin</label><br>
+            <label><input type="radio" name="q4" value="When the function is continuous"> When the function is continuous</label><br>
+            <br>
+            <button type="button" onclick="submitAnswer(this)">Submit Answer</button>
+            <p class="feedback"></p>
+         </form>
+
+---
+
+.. raw:: html
+
+   <script>
+   function submitAnswer(button) {
+      const form = button.closest('form');
+      const selected = form.querySelector('input[type="radio"]:checked');
+      const correct = form.dataset.answer;
+      const feedback = form.querySelector('.feedback');
+
+      if (!selected) {
+         feedback.textContent = "Please select an option.";
+         feedback.style.color = "gray";
+         return;
+      }
+
+      if (selected.value === correct) {
+         feedback.textContent = "✅ Correct!";
+         feedback.style.color = "green";
+      } else {
+         feedback.textContent = "❌ Incorrect. Try again.";
+         feedback.style.color = "red";
+      }
+   }
+   </script>            
+
