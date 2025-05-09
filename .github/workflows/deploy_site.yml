@@ -16,22 +16,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+      
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           enablement: true  # This helps enable Pages if not already enabled
-
-      #  index.html file for testing
-      - name: Build site
-        run: |
-          mkdir -p build
-          echo "<!DOCTYPE html><html><body><h1>It works!</h1></body></html>" > build/index.html
-
+      
+      # Add your build steps here
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build'  # Ensure this is your build output directory
+          path: './build'  # Adjust this to your build output directory
 
   deploy:
     environment:
