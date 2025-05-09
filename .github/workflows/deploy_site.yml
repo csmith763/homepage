@@ -23,7 +23,17 @@ jobs:
           enablement: true  # This helps enable Pages if not already enabled
       
       # Add your build steps here
-      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # or whatever version your project uses
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build  # make sure this outputs to ./build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
