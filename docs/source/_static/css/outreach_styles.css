@@ -18,10 +18,12 @@ boldblue {
     color: #38b4d6;
     font-weight: bold;
 }
+
 /* === Quiz Section Styling === */
 /* Style the entire admonition box */
 .admonition {
-    border-left: 6px solid #B3A369;  /* golden vertical line */
+    border-left: 6px solid #B3A369;
+    /* golden vertical line */
     border-radius: 8px;
     padding: 0;
     margin-bottom: 20px;
@@ -31,17 +33,25 @@ boldblue {
 }
 
 /* Add padding inside the body of the admonition (text area) */
-.admonition > :not(.admonition-title) {
+.admonition> :not(.admonition-title) {
     padding: 16px 20px;
 }
 
 /* Title bar styling */
 .admonition-title {
-    background-color: #0a1f44;  /* navy */
+    background-color: #0a1f44;
+    /* navy */
     color: white;
     font-weight: bold;
     font-size: 1.1em;
     padding: 12px 16px;
     border-radius: 8px 8px 0 0;
     font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+/* Center tables */
+.center-table {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
 }

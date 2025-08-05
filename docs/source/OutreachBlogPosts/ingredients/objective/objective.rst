@@ -24,7 +24,7 @@ Most often in numerical optimization, the objective function is created in such 
 
 Going back to the second example, where the goal is to minimize the total time it takes to get to school, let’s introduce some mathematical terminology for how to represent objective functions in optimization. 
 
-Here, :math:`T` represents the function that determines how much time it takes to get to school once you wake up. If you have never seen the three-bar equal sign before, this simply means that:math:`T` is identical to or defined as the total time to get to school. 
+Here, :math:`T` represents the function that determines how much time it takes to get to school once you wake up. If you have never seen the three-bar equal sign before, this simply means that :math:`T` is identical to or defined as the total time to get to school. 
 
 .. Note the extra .. after caption text is important to void a legend entry
 .. figure:: images/1_ObjFuncs.svg

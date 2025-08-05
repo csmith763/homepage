@@ -30,20 +30,18 @@ Set-up
 We’ll now look at how to set up an optimization problem and potential methods of solving it. To keep things simple, we will only be looking at one of the three possible constraints – available fencing material.  
 
 Here is the explicit problem: Design a rectangular fence with the largest area possible given 30 feet of fencing.  
-*Objective: Maximizing area 
-*Design variables: length, width 
-*Identify constraints: A limited amount of fence available 
+*Objective: Maximizing area*
+*Design variables: length, width*
+*Identify constraints: A limited amount of fence available*
 
 With each component of the optimization problem laid out, think about ways you could solve the problem. Bear in mind that there is more than one way to arrive at the solution!
 
-.. figure:: images/FencedArea/FencedAreaFormulation.svg
+.. figure:: images/FencedAreaFormulation.svg
       :width: 300px
-      :alt: 
+      :alt: description of the problem formulation for maximizing the area enclosed by a fence
       :align: center
 
-      :captiontext:
-
-      ..
+      :captiontext:`Formulation for Maximizing the Area Enclosed by a Fence`
 
 Solution 
 `````````
@@ -74,6 +72,7 @@ Using the equations above, the solution can be found by plugging in numbers for 
 .. list-table:: 
    :widths: 50 50 50 50
    :header-rows: 1
+   :class: center-table
 
    * - l
      - w
@@ -93,6 +92,7 @@ However, this method takes a long time, and is tedious. To simplify the problem,
 .. list-table:: 
    :widths: 50 50 50 50
    :header-rows: 1
+   :class: center-table
 
 
    * - Perimeter
@@ -184,20 +184,22 @@ It’s quadratic! You may have seen it written as ax2  + bx + c = 0, the same as
 
 This equation can then be plotted, and the max will be at the peak of the parabola.  
 
-.. figure:: images/FencedArea/Parabola.png
+.. figure:: images/Parabola.png
       :width: 1000px
-      :alt: 
+      :alt: parabola that shows the optimal values for the seocnd design variable and the area
       :align: center
 
-      :captiontext:
-
-      ..
+      :captiontext:`INSERT CAPTION HERE`
 
 This is what we call a global maximum as discussed in previous sections.  
 
 To visualize this relationship, try to achieve the same values using the applet below.
 
-*INSERT GEOGEBRA HERE*
+.. ggb:: zngqcxeb
+    :width: 800
+    :height: 600
+    :zoom_drag: true
+    :full_screen_button: true
 
 There are other ways to solve this problem, if you are familiar with calculus explore more in the dropdown.
 

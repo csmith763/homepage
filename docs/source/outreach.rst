@@ -39,13 +39,13 @@ After learning about the core ideas that are essential to all optimization probl
 
 
     
-.. Here is an in-browser python environment where you can test your favorite
-.. python code live!
+Here is an in-browser python environment where you can test your favorite
+python code live!
 
-.. .. toctree::
-..     :maxdepth: 1
+.. toctree::
+    :maxdepth: 1
 
-..     OutreachBlogPosts/python
+    OutreachBlogPosts/python
 
 
 .. The geogebra applet does not work with press theme due to a conflict on js
