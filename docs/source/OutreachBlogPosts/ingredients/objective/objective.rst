@@ -14,11 +14,11 @@ No matter the discipline or field, an objective function is a core component of 
 
 Let’s start with a simple example to give a clear idea of an objective function. Consider this scenario: it is Monday morning, and the school day starts at 8 AM. Your goal, or objective, is to make it to school on time! This is an example of a :boldblue:`Boolean objective` because there are two ways to answer the question about whether you made it to school on time: *true* or *false*.  
 
-While making it to school on time is important, this scenario can be reframed to further illustrate some additional optimization principles. Another way to think about the commute to school is that you want to take as little time as possible in the morning from when you wake up until you arrive at school. Then, this allows you to sleep longer in the morning to make sure you are well rested for all your classes. 
+While making it to school on time is important, this scenario can be reframed to further illustrate some additional optimization principles. Another way to think about the commute to school is that you want to take as little time as possible in the morning from when you wake up until you arrive at school. This allows you to sleep longer in the morning to make sure you are well rested for all your classes. 
 
 In this new scenario, the goal, or objective function, is the total amount of time that it takes to get to school, and this is the quantity to minimize. This is an example of a :boldblue:`continuous objective` since the time it takes to get to school is contained within a range of different values. 
 
-The trip to school will often take between 30 minutes to 1 hour, but it could take longer or shorter depending on traffic and other factors. Without adding any :boldblue:`constraints`, which places limits on quantities of interest like the time it takes to get to school, there is technically no limit to how short of a time it takes you to get to school, but this would also require you to invent teleportation or stop time! While we are not focused on constraints here, you can learn more about constraints and their role in optimization in the next section.
+The trip to school will often take between 30 minutes to 1 hour, but it could take longer or shorter depending on traffic and other factors. Without adding any :boldblue:`constraints`, which place limits on quantities of interest, there is technically no limit to how short of a time it takes you to get to school, but this would also require you to invent teleportation or stop time! While we are not focused on constraints here, you can learn more about constraints and their role in optimization in the next section.
 
 Most often in numerical optimization, the objective function is created in such a way that it is a quantitative value or number that can be minimized. This is the convention in optimization, but one can easily maximize a function using the same techniques by minimizing the negative of the function. 
 
@@ -65,7 +65,7 @@ Finally, since we want to minimize the total time it takes to get to school, the
 
 From a notation point of view, the :math:`x` below the word “min” means that we are changing the design variables to minimize our objective function of interest. 
 
-Now that we have defined the problem, consider three design variables that influence the amount of time it takes to get to school: what to cook for breakfast, whether an outfit was picked out the night before, and the mode of transportation to get to school. For simplicity, each set of design variables will be denoted by the predetermined options inside the curly braces {}. Next to each choice in the set, the number of minutes that each option adds to the objective function is given. 
+Now that we have defined the problem, consider three design variables that influence the amount of time it takes to get to school: what to cook for breakfast, whether an outfit was picked out the night before, and the mode of transportation to get to school. For simplicity, each set of design variables will be denoted by the predetermined options inside the curly braces {} below. Next to each choice in the set, the number of minutes that each option adds to the objective function is given. 
 
 .. figure:: images/4_Choices.svg
    :figwidth: 100 %
@@ -91,7 +91,7 @@ Using these sets of design variables, we can choose a couple of combinations to 
 
 From these two choices, Choice 1 is better than Choice 2 since it is six minutes faster! However, while Choice 1 is the shortest of these two options, is it truly the best? Can you find a better choice using the sets above? Click the dropdown to see the answer for this example. 
 
-.. dropdown:: Test Your Knowledge: What is the optimal choice of design variables for this example? 
+.. dropdown:: Pause and Reflect: What is the optimal choice of design variables for this example? 
    :icon: question
 
    Looking back at the design variable sets above, it is apparent that a choice can be made that results in a shorter amount of time than Choices 1 and 2. With the following choice for the design variables, the total amount of time it would take to get to school is 13 minutes, which is the optimal time in this scenario!  
