@@ -50,7 +50,7 @@ Now, instead of a lake at the bottom of the valley, what if there is a pond midw
    :captiontext:`Curve of Minima for the Inequality Constrained Valley Problem`
 
 
-Finally, suppose there is a road running through the valley that you must stay on. The objective remains the same: minimize your altitude; but your position is always constrained by the road. You could formulate this so that your position :math:`x` must lie on the path defined by the road :math:`p(s): x=p(s)`. Alternatively, you could formulate this constraint by saying the distance between you and the road must be equal to zero: :math:`x-p\left(s\right)=0`. Both of these are equivalent and are *equality constraints*, and both result in a constraint that is always active. Here, there is a single point on the path that minimizes your elevation, and this is the constrained minimum for the problem.
+Finally, suppose there is a road running through the valley that you must stay on because you would get lost otherwise. The objective remains the same: minimize your altitude; but your position is always constrained by the road. You could formulate this so that your position :math:`x` must lie on the path defined by the road :math:`p(s): x=p(s)`. Alternatively, you could formulate this constraint by saying the distance between you and the road must be equal to zero: :math:`x-p\left(s\right)=0`. Both of these are equivalent and are *equality constraints*, and they result in a constraint that is always active. Here, there is a single point on the path that minimizes your elevation, and this is the constrained minimum for the problem.
 
 .. figure:: images/equality_constraint.svg
    :width: 700px
@@ -60,6 +60,8 @@ Finally, suppose there is a road running through the valley that you must stay o
    :captiontext:`Single Minimum for the Equlity Constrained Valley Problem`
 
    ..
+
+One final piece of terminology that often appears in optimization is the concept of :boldblue:`feasible` and :boldblue:`infeasible` points. Think back to the previous example, where you are trying to minimize your altitude in the valley while remaining on the road. As long as you stay on the road, regardless of your altitude, you know where you are, and the constraint is satisfied. This would be a :boldblue:`feasible` point because you have satisfied all the constraints. However, if you move off the road, the constraint is no longer met, making this an :boldblue:`infeasible`` point. For any optimization problem, feasible points are the points that satisfy all constraints in your problem.
 
 In many optimization problems, you might often have several constraints, and it is possible to have constraints of both types for the problem you want to solve. The form for these constraints and how they are represented mathematically is dependent on the problem you want to solve, but the key idea about how the two types of constraints influence your problem is ultimately the same. 
 

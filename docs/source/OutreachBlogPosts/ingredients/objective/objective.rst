@@ -121,6 +121,6 @@ Definitions:
 
 - Objective function: the mathematical function that you are trying to minimize (or maximize)
 
-- Constraints: limits on quantities of interest, such as design variables or objective function values (see next section for more details)
+- Constraints: limits on quantities of interest, such as design variables or function values (see next section for more details)
 
 - Design variables: choices you make for factors that directly influence the value of the objective function

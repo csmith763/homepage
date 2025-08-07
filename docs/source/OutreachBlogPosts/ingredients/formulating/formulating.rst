@@ -18,7 +18,7 @@ Formulating an Optimization Problem
 General Procedure
 -----------------
 
-Now that you have been introduced to :boldblue:`objective functions`, :boldblue:`design variables`, and :boldblue:`constraints` in detail, the next step is understanding how to combine these concepts to create an optimization problem. First, recall these three key definitions:
+Now that you have been introduced to :boldblue:`objective functions`, :boldblue:`design variables`, and :boldblue:`constraints` in detail, the next step is understanding how to combine these concepts to construct an optimization problem. First, recall these three key definitions:
 
 - Objective function: the mathematical function to be minimized (or maximized)
 - Constraints: limits on design variables and other quantities of interest
@@ -42,7 +42,7 @@ Broadly, the major steps in formulating an optimization problem are listed below
 
     For now, we are only going to focus on optimization problems with a single objective function, but there are techniques for performing :boldblue:`multi-objective optimization`. For :boldblue:`single-objective optimization`, the objective function we define can be quantified by an individual scalar value. The topic of multi-objective optimization is a bit more advanced and will be discussed in a future section.
 
-One way to assist with the process of formulating an optimization problem is with an :boldblue:`eXtended Design Structure Matrix (XDSM) diagram`! This is a tool that helps illustrate the flow of information between different parts of your problem. To understand how this diagram works, consider the example below that highlights the different components. 
+One way to assist with the process of formulating an optimization problem is with an :boldblue:`eXtended Design Structure Matrix (XDSM) diagram`! This is a tool that helps illustrate the flow of information between different parts of your problem. To understand how this diagram works, consider the example below that highlights the key aspects. 
 
 .. figure:: images/2_XDSMDescription_v2.png
     :scale: 5 %
@@ -53,12 +53,12 @@ One way to assist with the process of formulating an optimization problem is wit
 
     ..
 
-This is a generic optimization problem to describe the basic concepts of an XDSM diagram. The rectangular components along the main diagonal with the green backgrounds represent the main analysis blocks within the system. Within these analyses, outputs of interest, such as the objective function, are computed given some inputs. Inputs to each analysis block are depicted with vertical, grey lines, and this is true whether the input is above or below the analysis block. The inputs to each discipline can either be outputs from another discipline or fixed inputs to the system. For example, :analysisgreen:`Analysis Block 2` has two inputs: :math:`y_1`, which is an output from :analysisgreen:`Analysis Block 1`, and :math:`c_2`, a fixed input to the system. All the outputs of a given analysis block are connected by horizontal, grey lines, and here the outputs are :math:`y_1` and :math:`y_2`. The analysis procedure for this system consists of the :analysisgreen:`green` blocks, but an :optblue:`Optimizer`, shown with a :optblue:`blue` oval, exists at the top-level of the model. The :optblue:`Optimizer` controls the design variables for the system, :math:`x`, which are provided as inputs in this example to the first analysis block. After performing the analysis for a given set of design variables, the outputs of interest are provided back to the :optblue:`Optimizer`, which updates the design variables in a manner to improve the objective function. The process for the optimization is depicted in the XDSM diagram with the black arrow, which further indicates the key steps in the optimization procedure. Once the :optblue:`Optimizer` converges to a solution, it returns the optimal output values, :math:`y_1^\ast` and :math:`\ y_2^\ast`, and the optimal design variables, :math:`x^\ast`, which are all indicated with a “star”.
+This is a generic optimization problem to describe the basic concepts of an XDSM diagram. The rectangular components along the main diagonal with the green backgrounds represent the main analysis blocks within the system. Within these analyses, outputs of interest, such as the objective function, are computed given some inputs. Inputs to each analysis block are depicted with vertical, grey lines, and this is true whether the input is above or below the analysis block. The inputs to each discipline can either be outputs from another discipline or fixed inputs to the system. For example, :analysisgreen:`Analysis Block 2` has two inputs: :math:`y_1`, which is an output from :analysisgreen:`Analysis Block 1`, and :math:`c_2`, a fixed input to the system. All the outputs of a given analysis block are connected by horizontal, grey lines, and here the outputs are :math:`y_1` and :math:`y_2`. The analysis procedure for this system consists of the :analysisgreen:`green` blocks, but an :optblue:`Optimizer`, shown with a :optblue:`blue` oval, exists at the top-level of the model. The :optblue:`Optimizer` controls the design variables for the system, :math:`x`, which are provided as inputs in this example to the first analysis block. After performing the analysis for a given set of design variables, the outputs of interest are provided back to the :optblue:`Optimizer`, which updates the design variables in a manner to improve the objective function. The process for the optimization is depicted in the XDSM diagram with the black arrow, which further indicates the key steps in the optimization procedure and the order of execution. Once the :optblue:`Optimizer` converges to a solution, it returns the optimal output values, :math:`y_1^\ast` and :math:`\ y_2^\ast`, and the optimal design variables, :math:`x^\ast`, which are all indicated with a “star”.
 
-.. dropdown:: Key Idea: what's the difference between inputs above and below analysis blocks?
+.. dropdown:: Key Idea: What's the difference between inputs above and below analysis blocks?
     :icon: light-bulb
 
-    If the input is below the analysis block, then this indicates that there is an :boldblue:`implicit relationship` between these two disciplines, which means that an input to this discipline is computed later or downstream of the current discipline. These implicit inputs have to be determined by implementing some solver procedure or continuously iterating until the value no longer changes. Some optimization examples with implicit relationships will be discussed in later posts.
+    If the input is below the analysis block, then this indicates that there is an :boldblue:`implicit relationship` between the connected disciplines. This means that an input to the discipline is computed later, or downstream, of the current discipline. In the example above, there would be an implicit relationship if the output :math:`y_2` of :analysisgreen:`Analysis Block 2` was added as an input to :analysisgreen:`Analysis Block 1`. These implicit inputs behave differently and must be determined by implementing some solver procedure or continuously iterating until the values no longer change. Some optimization examples with implicit relationships will be discussed in later posts.
 
 -----------------------
 Real-world Applications
@@ -66,9 +66,9 @@ Real-world Applications
 
 Now that the procedure for formulating an optimization problem has been introduced and you understand the basics, you may be wondering how optimization can be used for real-world applications. Here are a few examples of how optimization has been used in a variety of disciplines.
 
-#####################################
-Rocket to International Space Station
-#####################################
+###########################################
+A Rocket to the International Space Station
+###########################################
 
 .. figure:: images/3_DragonDocking.svg
     :figwidth: 100 %
@@ -101,7 +101,7 @@ Grocery Store Pricing
 
     :captiontext:`Sample Supply and Demand Curves for Grocery Store Pricing`
 
-Now imagine that you are at the grocery store shopping for your favorite snacks. Have you ever thought about how the prices are set for what you buy? From the supermarket operations side, the task of setting the prices for grocery store items is an optimization problem. As a company, one objective might be to maximize profit, which is the total amount of money made minus expenses. One way to do this is to make all the items expensive to increase the profit margin. However, if this is done, you, as a shopper, would go to another store to buy your snacks. So, a constraint that must be satisfied is that the prices set must be less than or equal to those of a competing store. Keeping this constraint among others in mind, the grocery store controls the prices of their goods, which are their design variables. In economics, this problem is often thought about in terms of supply and demand curves, where the optimal point is the intersection of the two curves! 
+Now imagine that you are at the grocery store shopping for your favorite snacks. Have you ever thought about how the prices are set for what you buy? From the supermarket operations side, the task of setting the prices for grocery store items is an optimization problem. As a company, one objective might be to maximize profit, which is the total amount of money made minus expenses. One way to do this is to make all items expensive to increase the profit margin. However, if this is done, you, as a shopper, would go to another store to buy your snacks. So, a constraint that must be satisfied is that the prices set must be less than or equal to those of a competing store. Keeping this constraint among others in mind, the grocery store controls the prices of their goods, which are their design variables. In economics, this problem is often thought about in terms of supply and demand curves, where the optimal point is the intersection of the two curves! 
 
 .. figure:: images/6_OptGroceriesStatement.svg
     :scale: 80 %
@@ -125,7 +125,7 @@ Traffic Junction Design
 
     :captiontext:`Golden Gate Bridge in San Francisco (Credit - CNN [2])`
 
-One final example to consider is that you are a civil engineer trying to design a new traffic junction over a river. Since the vehicles must travel over water, you need to design a bridge with the objective of maximizing traffic flow. While adding many lanes would help with traffic flow, you have a strict budget, or monetary constraint. Additionally, you must ensure that the bridge is capable of holding a minimum weight in case there is a traffic jam. This adds an additional structural constraint, where the load of the cars on the bridge must be less than or equal to a maximum allowable load. Your design variables in this instance would then be the number of lanes, the geometry of the bridge, and the materials that you use. If you have ever heard of the video game Poly Bridge, this concept might sound familiar! 
+One final example to consider is that you are a civil engineer trying to design a new traffic junction over a river. Since the vehicles must travel over water, you need to design a bridge with the objective of maximizing traffic flow. While adding many lanes would help with traffic flow, you have a strict budget, or monetary constraint. Additionally, you must ensure that the bridge is capable of holding a minimum weight in case there is a traffic jam. This adds an additional structural constraint, where the load of the cars on the bridge must be less than or equal to a maximum allowable load. Your design variables, in this instance, would then be the number of lanes, the geometry of the bridge, and the materials that you use. If you have ever heard of the video game Poly Bridge, this concept might sound familiar! 
 
 .. figure:: images/8_OptBridgeStatement.svg
     :scale: 70 %

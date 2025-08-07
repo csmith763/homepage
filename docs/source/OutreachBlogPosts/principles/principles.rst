@@ -35,7 +35,7 @@ Concept of a Gradient
 
 While the position of the ball allows us to determine its height, another important piece of information is the slope of the surface at a given position. At each point along the surface, the :boldblue:`gradient` is equivalent to the slope of the surface that the ball can move along. The :boldblue:`gradient` is mathematically represented by :math:`\nabla f(x)`, and it always points uphill, which is opposite to the red arrows shown in the previous image. 
 
-To gain an intuition for the :boldblue:`gradient`, experiment with the two GeoGebra applets embedded below. For this first applet, the scenario of the ball moving on the curved track is mimicked. The orange point can be dragged along the curved surface between the two boundaries, and as the point moves the red arrow representing the :boldblue:`gradient` of the function changes size and direction. 
+To gain an intuition for the :boldblue:`gradient`, experiment with the two GeoGebra applets embedded below. For this first applet, the scenario of the ball moving on the curved track is mimicked. The orange point can be dragged along the curved surface between the two boundaries, and, as the point moves, the red arrow representing the :boldblue:`gradient` of the function changes size and direction. You can also toggle to view the :boldblue:`descent direction`, which will be introduced later in this section.
 
 .. ggb:: skys5x3g
     :width: 800
@@ -43,7 +43,7 @@ To gain an intuition for the :boldblue:`gradient`, experiment with the two GeoGe
     :zoom_drag: true
     :full_screen_button: true
 
-This second applet increases the dimension of the problem by one, as now the point can be moved horizontally and vertically independently. The applet is divided into two separate view panes. On the right, you can see the surface of the objective function, which in this case does not have a well-defined meaning. However, for the purposes of this example, you can again consider the objective function as the altitude, which is the value in the :math:`Z` direction. The view on the left shows the contour plot of the function on the right. Here, the curves drawn indicate the locations where the function has a constant value, and the values are shown next to the curves. The benefit of a contour plot is that it allows for viewing a three-dimensional surface in a two-dimensional space. Again, the orange point can be dragged throughout the two-dimensional space, and the :boldblue:`gradient` will update as the point moves. The position of the orange point will also update in the right pane to help with understanding the two visuals.
+This second applet increases the dimension of the problem by one, as now the point can be moved both horizontally and vertically. The applet is divided into two separate view panes. On the right, you can see the surface of the objective function, which in this case does not have a well-defined meaning. However, for the purposes of this example, you can again consider the objective function as the altitude, which is the value in the :math:`Z` direction. The view on the left shows the contour plot of the function on the right. Here, the curves drawn indicate the locations where the function has a constant value, and the values are shown next to the curves. The benefit of a contour plot is that it allows for viewing a three-dimensional surface in a two-dimensional space. Again, the orange point can be dragged throughout the two-dimensional space, and the :boldblue:`gradient` will update as the point moves. The position of the orange point will also update in the right pane to help with understanding the two visuals.
 
 .. ggb:: ww2g6esc
    :width: 800
@@ -86,15 +86,13 @@ So, from a high-level perspective, when optimizing, we want to move the design p
 
    Consider once more the example of the ball on the track. In this image, there are two minimizers: one on the left side of the hill and one on the right. What happens if the ball ends up at the point on the right? This point is still a minimizer, so the gradient will be zero. However, as we can see graphically, this is not the global minimizer for the problem, which means that we have not found the best solution. For many problems, the design space cannot be visualized like this, so it can be hard to determine if a minimizer is the global minimizer. However, for :boldblue:`convex functions`, there is a guarantee that a local minimizer is the global minimizer, as there is only one for the problem! As a result, :boldblue:`convex optimization` is a special subset of optimization where the goal is to create these :boldblue:`convex functions` so that global minimizers can be found. 
 
+Now that you are familiar with the concepts of gradients, minimizers, and descent directions, the next sections will dive into a few specific examples of optimization to help introduce these ideas in action for real problems. When thinking through the examples, try to connect the ideas that you learned in this section with the practical task of solving the problems to solidify the underlying theory! 
 
-
----------------------
- Quiz
----------------------
+-------------------
+Test your Knowledge
+-------------------
 
 .. admonition:: Q1: What does it mean when a point is called a "minimizer" of a function?
-   :class: dropdown
-
 
       .. raw:: html
 
@@ -108,13 +106,8 @@ So, from a high-level perspective, when optimizing, we want to move the design p
           <p class="feedback"></p>
         </form>
 
----
-
-
 .. admonition:: Q2: In gradient descent optimization, how is the gradient used?
-   :class: dropdown
     
-
       .. raw:: html
 
          <form class="quiz-form" data-answer="To achieve a minimum, we move in the opposite direction of the gradient">
@@ -127,14 +120,8 @@ So, from a high-level perspective, when optimizing, we want to move the design p
             <p class="feedback"></p>
          </form>
 
----
-
 
 .. admonition:: Q3: In optimization, if we reach a point where the gradient equals zero, this point is:
-   :class: dropdown
-
-   
-   
 
       .. raw:: html
 
@@ -148,13 +135,8 @@ So, from a high-level perspective, when optimizing, we want to move the design p
             <p class="feedback"></p>
          </form>
 
----
-
 
 .. admonition:: Q4: In optimization problems, when can you say that a local minimum is also a global minimum ?
-   :class: dropdown
-
-    
 
       .. raw:: html
 
@@ -167,8 +149,6 @@ So, from a high-level perspective, when optimizing, we want to move the design p
             <button type="button" onclick="submitAnswer(this)">Submit Answer</button>
             <p class="feedback"></p>
          </form>
-
----
 
 .. raw:: html
 
@@ -193,5 +173,5 @@ So, from a high-level perspective, when optimizing, we want to move the design p
          feedback.style.color = "red";
       }
    }
-   </script>            
+   </script>
 
