@@ -79,3 +79,48 @@ Definitions:
 - Inequality constraint: a mathematical constraint where a value is greater than or less than some specified value
 
 - Equality constraint: a mathematical constraint where a value is exactly equal to another specified value
+
+Test your Knowledge
+````````````````````
+
+.. admonition:: Q: According to the diagram, why is it important to identify constraints in an optimization problem?
+    
+
+       .. raw:: html
+
+            <form class="quiz-form" data-answer="To ensure optimized results make physical sense">
+               <label><input type="radio" name="q2" value="To make mathematical calculations more easier  "> To make mathematical calculations more easier  </label><br>
+               <label><input type="radio" name="q2" value="To ensure optimized results make physical sense"> To ensure optimized results make physical sense</label><br>
+               <label><input type="radio" name="q2" value="To simplify the objective function  "> To simplify the objective function  </label><br>
+               <label><input type="radio" name="q2" value="To reduce the number of design variables "> To reduce the number of design variables </label><br>
+               <br>
+               <button type="button" onclick="submitAnswer(this)">Submit Answer</button>
+               <p class="feedback"></p>
+            </form>
+
+
+
+.. raw:: html
+
+   <script>
+   function submitAnswer(button) {
+      const form = button.closest('form');
+      const selected = form.querySelector('input[type="radio"]:checked');
+      const correct = form.dataset.answer;
+      const feedback = form.querySelector('.feedback');
+
+      if (!selected) {
+         feedback.textContent = "Please select an option.";
+         feedback.style.color = "gray";
+         return;
+      }
+
+      if (selected.value === correct) {
+         feedback.textContent = "✅ Correct!";
+         feedback.style.color = "green";
+      } else {
+         feedback.textContent = "❌ Incorrect. Try again.";
+         feedback.style.color = "red";
+      }
+   }
+   </script>            

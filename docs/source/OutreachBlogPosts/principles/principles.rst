@@ -93,6 +93,8 @@ Test your Knowledge
 -------------------
 
 .. admonition:: Q1: What does it mean when a point is called a "minimizer" of a function?
+   
+
 
       .. raw:: html
 
@@ -107,7 +109,9 @@ Test your Knowledge
         </form>
 
 .. admonition:: Q2: In gradient descent optimization, how is the gradient used?
+   
     
+
       .. raw:: html
 
          <form class="quiz-form" data-answer="To achieve a minimum, we move in the opposite direction of the gradient">
@@ -122,7 +126,7 @@ Test your Knowledge
 
 
 .. admonition:: Q3: In optimization, if we reach a point where the gradient equals zero, this point is:
-
+   
       .. raw:: html
 
          <form class="quiz-form" data-answer="all the above">
@@ -149,6 +153,7 @@ Test your Knowledge
             <button type="button" onclick="submitAnswer(this)">Submit Answer</button>
             <p class="feedback"></p>
          </form>
+
 
 .. raw:: html
 

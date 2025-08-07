@@ -138,6 +138,68 @@ One final example to consider is that you are a civil engineer trying to design 
 
 To learn more about how to perform optimization on your own numerical problems and utilize the concepts you have learned in this introductory section, keep reading the following sections to see optimization in action!
 
+---------------------
+Test your Knowledge
+---------------------
+
+
+.. admonition:: Q1: What quantities in an optimization problem formulation are you directly changing to impact your design?
+    
+   
+
+        .. raw:: html
+
+            <form class="quiz-form" data-answer="Design variables">
+                <label><input type="radio" name="q3" value="Objective function"> Objective function </label><br>
+                <label><input type="radio" name="q3" value="Constraints"> Constraints  </label><br>
+                <label><input type="radio" name="q3" value="Design variables"> Design variables  </label><br>
+                <label><input type="radio" name="q3" value="Critical points"> Critical points </label><br>
+                <br>
+                <button type="button" onclick="submitAnswer(this)">Submit Answer</button>
+                <p class="feedback"></p>
+            </form>
+
+.. admonition:: Q2: In which step would you define mathematical expressions that limit the values your design variables can take?
+    
+
+    
+
+        .. raw:: html
+
+            <form class="quiz-form" data-answer="Identifying constraints">
+                <label><input type="radio" name="q4" value="Choosing the objective"> Choosing the objective</label><br>
+                <label><input type="radio" name="q4" value="Choosing design variables"> Choosing design variables  </label><br>
+                <label><input type="radio" name="q4" value="Identifying constraints"> Identifying constraints  </label><br>
+                <label><input type="radio" name="q4" value="Formulating the analysis procedure"> Formulating the analysis procedure </label><br>
+                <br>
+                <button type="button" onclick="submitAnswer(this)">Submit Answer</button>
+                <p class="feedback"></p>
+            </form>
+.. raw:: html
+
+   <script>
+   function submitAnswer(button) {
+      const form = button.closest('form');
+      const selected = form.querySelector('input[type="radio"]:checked');
+      const correct = form.dataset.answer;
+      const feedback = form.querySelector('.feedback');
+
+      if (!selected) {
+         feedback.textContent = "Please select an option.";
+         feedback.style.color = "gray";
+         return;
+      }
+
+      if (selected.value === correct) {
+         feedback.textContent = "✅ Correct!";
+         feedback.style.color = "green";
+      } else {
+         feedback.textContent = "❌ Incorrect. Try again.";
+         feedback.style.color = "red";
+      }
+   }
+   </script>            
+
 ----------------
 Image References
 ----------------
@@ -147,3 +209,4 @@ Image References
 [1] `SpaceX Dragon Capsule Docking <https://www.cnn.com/2019/03/03/tech/spacex-crew-dragon-docking-international-space-station/index.html>`_
 
 [2] `Golden Gate Bridge <https://www.cnn.com/travel/article/most-amazing-bridges/index.html>`_
+

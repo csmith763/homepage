@@ -13,4 +13,4 @@ In this next set of posts, we will discuss three of the most essential topics re
     objective/objective
     constraints/constraints
     formulating/formulating
-    quiz/quiz
+    

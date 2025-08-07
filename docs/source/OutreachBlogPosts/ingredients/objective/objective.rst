@@ -124,3 +124,45 @@ Definitions:
 - Constraints: limits on quantities of interest, such as design variables or function values (see next section for more details)
 
 - Design variables: choices you make for factors that directly influence the value of the objective function
+
+
+Test your Knowledge
+````````````````````
+.. admonition:: Q: Which of the following best describes the purpose of an objective function?
+   
+
+        .. raw:: html
+
+            <form class="quiz-form" data-answer="It specifies what you want to minimize or maximize  ">
+                <label><input type="radio" name="q1" value="It defines the limits on possible solutions "> It defines the limits on possible solutions </label><br>
+                <label><input type="radio" name="q1" value="It specifies what you want to minimize or maximize  "> It specifies what you want to minimize or maximize  </label><br>
+                <br>
+                <button type="button" onclick="submitAnswer(this)">Submit Answer</button>
+                <p class="feedback"></p>
+            </form>
+
+
+.. raw:: html
+
+   <script>
+   function submitAnswer(button) {
+      const form = button.closest('form');
+      const selected = form.querySelector('input[type="radio"]:checked');
+      const correct = form.dataset.answer;
+      const feedback = form.querySelector('.feedback');
+
+      if (!selected) {
+         feedback.textContent = "Please select an option.";
+         feedback.style.color = "gray";
+         return;
+      }
+
+      if (selected.value === correct) {
+         feedback.textContent = "✅ Correct!";
+         feedback.style.color = "green";
+      } else {
+         feedback.textContent = "❌ Incorrect. Try again.";
+         feedback.style.color = "red";
+      }
+   }
+   </script>            
