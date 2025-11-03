@@ -8,18 +8,27 @@
 Fenced Area
 ===========
 
-Optimization is applicable in a variety of different disciplines from physics to construction. It can also extend to 2-D, 3-D or even higher orders of dimension. For this example, however, we will keep things simple and formulate an optimization problem in the 2-D space with something you might even have in your own backyard: a fence!  
+Optimization is applicable in a variety of different disciplines from physics to construction. 
+It can also extend to 2-D, 3-D or even higher orders of dimension. 
+For this example, however, we will keep things simple and formulate an optimization problem in a 2-D space with something you might even have in your own backyard: a fence!  
 
-Perhaps you want to start a garden or contain an area for your dog to play in, the question lies in how large you can make the space contained by the fence. It would be most beneficial to have the largest amount of space, but it is unreasonable to build a fence around your entire street. Think about what would be limiting for this project, some of the most important factors would be space, amount of material, and cost. With this, you have an optimization problem, but let’s phrase it in more formal terms that you have learned so far.
+You want to start a garden or contain an area for your dog to play in, but the question is how large you can make the space contained by the fence. 
+It would be most beneficial to have the largest amount of space so that you can have a large garden with many types of produce or so that your dog can roam a vast space. 
+However, it is unreasonable to build a fence around your entire street! 
+Think about what might be a limiting factor for this project. 
+Some of the most important considerations would be space, the amount of material, and cost. 
+With this, you have an optimization problem, but we can phrase it in more formal terms according to what you have learned so far.
 
 .. dropdown:: What is the objective?
    :icon: question
    
    Maximizing the area 
+
 .. dropdown:: What are the design variables?
    :icon: question
    
    Dimensions of fence and the shape of the fence
+
 .. dropdown:: What are the constraints?
    :icon: question
    
@@ -27,47 +36,56 @@ Perhaps you want to start a garden or contain an area for your dog to play in, t
     
 Set-up
 ``````
-We’ll now look at how to set up an optimization problem and potential methods of solving it. To keep things simple, we will only be looking at one of the three possible constraints – available fencing material.  
+We will now look at how to set up an optimization problem and some potential methods of solving the problem. 
+To keep things simple, we will only be looking at one of the three possible constraints: available fencing material.  
 
 Here is the explicit problem: Design a rectangular fence with the largest area possible given 30 feet of fencing.  
-*Objective: Maximizing area*
-*Design variables: length, width*
-*Identify constraints: A limited amount of fence available*
+- *Objective*: maximizing the area inside the fence
+- *Design variables*: length, width of the fence (assuming a rectangular shape)
+- *Constraints*: amount of material available to construct the fence
 
-With each component of the optimization problem laid out, think about ways you could solve the problem. Bear in mind that there is more than one way to arrive at the solution!
+With each component of the optimization problem laid out, think about ways you could solve the problem. 
+Keep in mind that there is more than one way to arrive at the solution!
 
 .. figure:: images/FencedAreaFormulation.svg
       :width: 300px
       :alt: description of the problem formulation for maximizing the area enclosed by a fence
       :align: center
 
-      :captiontext:`Formulation for Maximizing the Area Enclosed by a Fence`
+      :captiontext:`Formulation for Maximizing the Area Enclosed by a Fence UPDATE IMAGE`
 
 Solution 
 `````````
-Before beginning to solve the problem, the question should be translated to a mathematical form. We define the variables that are changing and set up equations that relate them together. Here, the length of fence provided can be thought of as the perimeter which is a known equation for a rectangle. The inequality represents that we have at most 30 feet of fence but less can be used.  
+Before beginning to solve the problem, the question should be translated into a mathematical form. 
+This allows us to define the variables that are changing and set up equations that relate them to the objective and constraint functions. 
+First, we will establish some notation below for the design variables and other quantities of interest. 
 
 .. math::
+  \begin{gathered}
+  \textbf{Notation}\\
+  l = \text{length of fence}\\
+  w = \text{width of fence}\\
+  A = \text{Area of fence}\\
+  P = \text{Perimeter of fence}\\[1em]
+  \end{gathered}
 
-   \begin{gathered}
-   \text{Variables}\\
-   l = \text{length of fence}\\
-   w = \text{width of fence}\\
-   A = \text{Area of fence}\\[1em]
-   \text{Total Perimeter}\\
-   2l + 2w = P\\[1em]
-   \text{Area}\\
-   Area = l \cdot b\\[1em]
-   \text{Inequality}\\
-   P \leq 30
-   \end{gathered}
+Now, using equations for the perimeter and area of a rectangle, we can relate the design variables, the length :math:`l` and the width :math:`w`, to the area objective :math:`A` and the perimeter :math:`P`.
 
+.. math::
+  \text{Constraint: Perimeter}\\
+  2l + 2w = P \leq 30 \text{feet}\\[1em]
+  \text{Objective: Area}\\
+  A = l \cdot w\\[1em]
 
-Here are a few ways to approach the problem, the most straightforward being using sampling.  
+In this example, the inequality for the constraint represents that we have at most 30 feet of material available to construct the fence but less can also be used.  
+Now, here are a few different ways to approach the problem for solution procedures. 
 
 Sampling
 ````````
-Using the equations above, the solution can be found by plugging in numbers for a and b until the largest area is found that satisfies the perimeter constraint. Therefore, we will pick a value for the length and a value for the width and using the equations from above, calculate the perimeter and then the area. If the perimeter condition cannot be met, then the area value is not calculated.  
+Using the equations above, the solution can be found by plugging in numbers for :math:`l` and :math:`w` until the largest area is found that satisfies the perimeter constraint. 
+Therefore, we will pick values for the length and the width, and, using the equations from above, then calculate the perimeter and area. 
+If the perimeter condition cannot be met, then the area value is not calculated, as we do not have enough material available to build that fence.
+Consider two examples below for different combinations of the length and width values.
 
 .. list-table:: 
    :widths: 50 50 50 50
@@ -87,7 +105,10 @@ Using the equations above, the solution can be found by plugging in numbers for 
      - 36
      - 
 
-However, this method takes a long time, and is tedious. To simplify the problem, we can use intuition to know that the largest area will use all the available fence, so the perimeter is kept constant. This is an active constraint, and the design space will shrink as a result, leaving fewer numbers to have to go through to determine the answer. From there, a and b can vary so the perimeter adds up to 30 and figure out what the resulting area will be.
+However, this method takes a long time to check all possible values of :math:`l` and :math:`w`. 
+To simplify the problem, we can use intuition to assume that the largest area will use all the available fence, so the perimeter is kept constant. 
+This means the perimeter is an active constraint, which leaves fewer combinations of length and width to check to determine the answer. 
+Now, the length and width can only vary so that the perimeter adds up to 30 feet, and then the area can be computed from those values.
 
 .. list-table:: 
    :widths: 50 50 50 50
@@ -136,9 +157,13 @@ However, this method takes a long time, and is tedious. To simplify the problem,
      - 6
      - 54
 
-From this iteration, we find that a length of 7 and a width of 8 will give us the largest area. However, this is with the constraint that our sides are integers or whole numbers. If we can have the sides be fractions and add another row it is found that a length and width of 7.5 has the largest area of 56.25. This may not seem obvious, but by looking at where the area reaches the largest value before decreasing again, it means that the correct values are at that point. This visualizes the concept of derivatives!  
+From this iterative procedure, we find that a length of 7 and a width of 8 will give us the largest area.
+However, this is with the constraint that our sides are integers or whole numbers. 
+If we can have the sides be fractions and add another row into the table, it is found that a length and width of 7.5 has the largest area of 56.25.
+This may not seem obvious, but by looking at where the area reaches the largest value before decreasing again, it means that the correct values are at that point. 
+This helps introduce the concept of derivatives in calculus for finding a critical point of a function.  
 
-Another way of thinking about it is to intuit that the largest area of a rectangle will always be a square. We can change our equations to reflect this constraint. 
+Another way of thinking about this problem is to intuit that the largest area of a rectangle will always be a square. We can change our equations to reflect this constraint. 
 
 .. math::
 
@@ -150,7 +175,8 @@ Another way of thinking about it is to intuit that the largest area of a rectang
    \end{gathered}
 
 
-Without keeping the perimeter constant and noticing that a square would have the largest area, using a trial-and-error method seems tedious, especially if we were to tackle a problem with more constraints than this. That's why some problems are being solved using an algorithm. An algorithm can be coded so that a computer solves each combination of values and outputs the correct answer. Click on the dropdown to learn more about algorithms
+:boldblue:`explain this paragraph`. Without keeping the perimeter constant and noticing that a square would have the largest area, using a trial-and-error method seems tedious, especially if we were to tackle a problem with more constraints than this. That's why some problems are being solved using an algorithm. 
+An algorithm can be coded so that a computer solves each combination of values and outputs the correct answer. Click on the dropdown to learn more about algorithms
 
 .. dropdown:: Algorithm
    :icon: light-bulb
@@ -159,7 +185,9 @@ Without keeping the perimeter constant and noticing that a square would have the
 
 Graphically
 ```````````
-Another approach to solving this problem is graphically and with a little bit of algebra. Looking at the equations formulated previously, a new equation can be formed by solving one variable for the other. If you have learned how to solve a system of equations try this out for yourself first before seeing the answer.  
+Another approach to solving this problem is graphically and with some algebra. 
+Looking at the equations formulated previously, a new equation can be formed by solving for one variable from the other. 
+If you have learned how to solve a system of equations in your math classes, try this out for yourself first before seeing the answer.
 
 .. math::
 
@@ -170,29 +198,28 @@ Another approach to solving this problem is graphically and with a little bit of
    w = 15-l
    \end{gathered}
 
-Now we have a in terms of b. This can then be substituted in the area equation as follows: 
+Now we have :math:`w` in terms of :math:`l`. 
+This can then be substituted into the area equation as follows: 
 
 .. math::
 
    \begin{gathered}
-   lw = Area\\
-   (15-b)b = Area\\
-   15b - b^2 = Area\\
+   l \cdot w = A\\
+   (15-l)\cdot l = A\\
+   15-l - l^2 = A\\
    \end{gathered}
 
-It’s quadratic! You may have seen it written as ax2  + bx + c = 0, the same as our equation if variables are rearranged.   
-
+This equation is quadratic! You may have seen it written before as :math:`ax^22 + bx + c = 0`, the same as our equation above if the variables are rearranged.
 This equation can then be plotted, and the max will be at the peak of the parabola.  
 
 .. figure:: images/Parabola.png
-      :width: 1000px
-      :alt: parabola that shows the optimal values for the seocnd design variable and the area
+      :width: 500px
+      :alt: parabola that shows the optimal values for the second design variable and the area
       :align: center
 
-      :captiontext:`INSERT CAPTION HERE`
+      :captiontext:`Plot of the Quadratic Equation for the Fenced Area Example`
 
-This is what we call a global maximum as discussed in previous sections.  
-
+This value of the area is a global maximum, as discussed in previous sections, since there are no other values for the design variables that yield a larger objective function value.  
 To visualize this relationship, try to achieve the same values using the applet below.
 
 .. ggb:: zngqcxeb
@@ -201,26 +228,30 @@ To visualize this relationship, try to achieve the same values using the applet 
     :zoom_drag: true
     :full_screen_button: true
 
-There are other ways to solve this problem, if you are familiar with calculus explore more in the dropdown.
+One additional way to solve this problem, as mentioned above, is with calculus.
+If you are familiar with calculus, explore more in the dropdown below.
 
 .. dropdown:: Calculus Based Solution
    :icon: light-bulb
    
-   A derivative is the slope of the tangent line at a specific point of a function. Hence, the greater the derivative at a point the greater the slope. At a critical point, the derivative is zero and taking a second derivative tells us if it is a min or max. This is useful in optimization since a derivative of 0 means that there is a change in slope in the function. As seen in the table method, the derivative at the point where the max is would be 0 since it changes from increasing to decreasing areas. Therefore, if we know how to take the derivative of our mathematical for area and set it equal to 0 we can find the point at which the area is the max.  
+   A derivative is the slope of the tangent line at a specific point of a function. Hence, the greater the derivative at a point, the greater the slope of the tangent line. At a critical point, the derivative is zero and taking a second derivative tells us if this point is a minimum or maximum. This is useful in optimization, since a derivative of 0 means that there is a change in slope in the function. :boldblue:`Is this really apparent from the table?` As seen in the table method, the derivative at the point where the max is would be 0 since it changes from increasing to decreasing areas. Therefore, if we know how to take the derivative of our mathematical expression for the area and set it equal to 0, we can find the point at which the area is a maximum.
 
    .. math::
 
       \begin{gathered}
-      Area = 15b - b^2\\
-      \frac{dArea}{db} = 15 - 2b\\
-      0 = 15 - 2b\\
-      b = 7.5
+      Area = 15l - l^2\\
+      \frac{dA}{dl} = 15 - 2l\\
+      0 = 15 - 2l\\
+      l = 7.5
       \end{gathered}
    
-We have arrived at the same solution as the other methods! As we can see, taking the derivative is often a very quick and easy way to get to a maximum and even a minimum value. It will also tell us if there is more than one point at which there is a maximum and minimum. 
+  We have arrived at the same solution as the other methods! As we can see, taking the derivative is often a very quick and easy way to get to a maximum (or a minimum) value. It can also tell us if there is more than one point at which there is a maximum and minimum, but in this case :math:`l` just has one optimal value. 
 
 Conclusion
 ``````````
-Optimization is not just a tool that mathematicians and engineers can use. It can be applied to the simplest of problems that you may need to solve in your everyday life. It also allows different answers to be ascertained by changing the constraints and design parameters. In this example, we built a continuous rectangular fence, but in real life we might want to build a fence with the house as one of the sides so a new constraint would be having one side be a constant value. We could also remove the constraint of the fence being rectangular, perhaps a circle or a hexagon would allow for a greater area. Optimization allows us to solve for a variety of possibilities and by following the same methodology, one solution’s approach can easily be modified to come to a different answer.  
-
-In the next sections we’ll take a look to see how optimization can have physics-based applications.  
+Optimization is a tool that can be applied to a wide variety of problems, even those that arise in everyday life. 
+In this example, we built a continuous rectangular fence and found the optimal length and width values to maximize the area inside the fence subject to a constraint on the total perimeter.
+However, in real life we might want to build a fence with the house as one of the sides, so a new constraint might be having one side as constant value. 
+We could also remove the assumption that the fence is rectangular, as perhaps a circle or a hexagon would allow for a greater area. 
+Optimization allows us to solve for a variety of possibilities, and, by following the same methodology, one solution approach can easily be modified to modify the problem and arrive at a different solution.  
+In the next section we will investigate how optimization can be applied for a physics-based application.  
