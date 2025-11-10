@@ -8,3 +8,4 @@ This is the landing page for the optimization examples section. THIS IS INCOMPLE
     :maxdepth: 1
 
     fenced_area/fenced_area
+    trajectory/trajectory
