@@ -47,7 +47,7 @@ Here is the explicit problem: Design a rectangular fence with the largest area p
 With each component of the optimization problem laid out, think about ways you could solve the problem. 
 Keep in mind that there is more than one way to arrive at the solution!
 
-.. figure:: images/FencedAreaFormulation.svg
+.. figure:: images/FencedAreaFormulation1.svg
       :width: 300px
       :alt: description of the problem formulation for maximizing the area enclosed by a fence
       :align: center
@@ -175,8 +175,8 @@ Another way of thinking about this problem is to intuit that the largest area of
    \end{gathered}
 
 
-:boldblue:`explain this paragraph`. Without keeping the perimeter constant and noticing that a square would have the largest area, using a trial-and-error method seems tedious, especially if we were to tackle a problem with more constraints than this. That's why some problems are being solved using an algorithm. 
-An algorithm can be coded so that a computer solves each combination of values and outputs the correct answer. Click on the dropdown to learn more about algorithms
+Without keeping the perimeter constant and noticing that a square would have the largest area, using a trial-and-error method seems tedious, especially if we were to tackle a problem with more constraints than this. That's why some problems are being solved using an algorithm. 
+An algorithm can be coded so that a computer solves each combination of values and outputs the correct answer. For this example, an algorithm could be set up such that it defines x and y variables that are the length and width and then calculate what the perimeter and area would be using known equations. It can then check if the perimeter satisfies the condition that it is less than 30. If it passes this check, it will then compare the area to the previous calculations area to see if it is greater and iterated until it closes upon the final answer. The usefulness of an algorithm comes from the fact that after one click to run the program, it can instantly find the answer you're looking for. Click on the dropdown to learn more about algorithms.
 
 .. dropdown:: Algorithm
    :icon: light-bulb
@@ -226,7 +226,6 @@ To visualize this relationship, try to achieve the same values using the applet 
     :width: 800
     :height: 600
     :zoom_drag: true
-    :full_screen_button: true
 
 One additional way to solve this problem, as mentioned above, is with calculus.
 If you are familiar with calculus, explore more in the dropdown below.
@@ -234,7 +233,7 @@ If you are familiar with calculus, explore more in the dropdown below.
 .. dropdown:: Calculus Based Solution
    :icon: light-bulb
    
-   A derivative is the slope of the tangent line at a specific point of a function. Hence, the greater the derivative at a point, the greater the slope of the tangent line. At a critical point, the derivative is zero and taking a second derivative tells us if this point is a minimum or maximum. This is useful in optimization, since a derivative of 0 means that there is a change in slope in the function. :boldblue:`Is this really apparent from the table?` As seen in the table method, the derivative at the point where the max is would be 0 since it changes from increasing to decreasing areas. Therefore, if we know how to take the derivative of our mathematical expression for the area and set it equal to 0, we can find the point at which the area is a maximum.
+   A derivative is the slope of the tangent line at a specific point of a function. Hence, the greater the derivative at a point, the greater the slope of the tangent line. At a critical point, the derivative is zero and taking a second derivative tells us if this point is a minimum or maximum. This is useful in optimization, since a derivative of 0 means that there is a change in slope in the function. :boldblue:`Is this really apparent from the table?` As seen in the graph, the derivative at the point where the max is would be 0 since it changes from increasing to decreasing areas.Therefore, if we know how to take the derivative of our mathematical expression for the area and set it equal to 0, we can find the point at which the area is a maximum.
 
    .. math::
 
@@ -245,7 +244,7 @@ If you are familiar with calculus, explore more in the dropdown below.
       l = 7.5
       \end{gathered}
    
-  We have arrived at the same solution as the other methods! As we can see, taking the derivative is often a very quick and easy way to get to a maximum (or a minimum) value. It can also tell us if there is more than one point at which there is a maximum and minimum, but in this case :math:`l` just has one optimal value. 
+   We have arrived at the same solution as the other methods! As we can see, taking the derivative is often a very quick and easy way to get to a maximum (or a minimum) value. It can also tell us if there is more than one point at which there is a maximum and minimum, but in this case :math:`l` just has one optimal value. 
 
 Conclusion
 ``````````
