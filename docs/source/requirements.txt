@@ -4,7 +4,6 @@ sphinxcontrib-bibtex
 sphinxcontrib-youtube
 sphinx-press-theme
 sphinx-tabs
-jupyterlite-xeus
 sphinxcontrib-youtube
 git+https://github.com/smdogroup/sphinxcontrib-geogebra.git
 # jupyterlite-sphinx

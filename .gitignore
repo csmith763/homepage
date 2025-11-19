@@ -6,3 +6,4 @@ docs/build
 .venv
 docs/source/venv/*
 _build/*
+docs/source/_contents/*
