@@ -73,60 +73,10 @@ These are the main inputs to the minimize function. There are some optional inpu
 
 Now that you have gained an understanding of the operation of minimize, try it out for yourself by changing the lines of code below the "EDIT LINE BELOW" markers.
 
-.. replite::
+.. notebooklite:: max_area_fd.ipynb
    :kernel: xpython
-   :height: 600px
-
-   import matplotlib.pyplot as plt
-   import numpy as np
-
-   x = np.linspace(0, 2 * np.pi, 200)
-   y = np.sin(x)
-
-   fig, ax = plt.subplots()
-   ax.plot(x, y)
-   plt.show()
-
-.. replite:: 
-   :kernel: xpython
-   :width: 90%
-   :height: 400px
-
-   from scipy.optimize import minimize
-
-   # fixed perimeter 
-   P = 0 #EDIT THIS LINE
-
-   # objective: minimize negative area 
-   def objective(vars):
-      x, y = vars
-      f = x + y #EDIT THIS LINE 
-      return f  
-
-   # perimeter constraint: 
-   def perimeter_constraint(vars):
-      x, y = vars
-      g = x + y #EDIT THIS LINE
-      return g 
-
-   # initial guess 
-   x0 = [-1, 1] #EDIT THIS LINE
-
-   # constraint and bounds
-   cons = ({'type': 'eq', 'fun': perimeter_constraint})
-   bnds = [(-100, 100), (-100, 100)] #EDIT THIS LINE
-
-   # run optimizer
-   res = minimize(objective, x0, bounds=bnds, constraints=cons)
-
-   print(res)
-
-   if res.success:
-      x_opt, y_opt = res.x
-      print(f"Optimal x = {x_opt:.2f}, Optimal y = {y_opt:.2f}")
-      print(f"Maximum area = {x_opt * y_opt:.2f}")
-   else:
-      print("Optimization failed!")
+   :width: 100%
+   :height: 500px
 
 
 ------------------------
