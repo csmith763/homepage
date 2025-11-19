@@ -47,12 +47,12 @@ Here is the explicit problem: Design a rectangular fence with the largest area p
 With each component of the optimization problem laid out, think about ways you could solve the problem. 
 Keep in mind that there is more than one way to arrive at the solution!
 
-.. figure:: images/FencedAreaFormulation1.svg
+.. figure:: ./images/FencedAreaFormulation1.svg
       :width: 300px
       :alt: description of the problem formulation for maximizing the area enclosed by a fence
       :align: center
 
-      :captiontext:`Formulation for Maximizing the Area Enclosed by a Fence UPDATE IMAGE`
+      :captiontext:`Formulation for Maximizing the Area Enclosed by a Fence`
 
 Solution 
 `````````
@@ -212,7 +212,7 @@ This can then be substituted into the area equation as follows:
 This equation is quadratic! You may have seen it written before as :math:`ax^22 + bx + c = 0`, the same as our equation above if the variables are rearranged.
 This equation can then be plotted, and the max will be at the peak of the parabola.  
 
-.. figure:: images/Parabola.png
+.. figure:: ./images/Parabola.png
       :width: 500px
       :alt: parabola that shows the optimal values for the second design variable and the area
       :align: center

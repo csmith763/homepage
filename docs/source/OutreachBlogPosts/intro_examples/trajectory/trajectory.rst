@@ -12,7 +12,7 @@ In this second example, consider that you are working for a nearby professional 
 While used at many sporting events, many fans in upper sections of the stadium often do not have the opportunity to get a T-shirt because the cannon cannot launch it far enough! 
 Therefore, your goal is to maximize the range that your T-shirt can travel, which is modeled with the trajectory of a projectile.
 
-.. figure:: images/TrajectoryDiagram.svg
+.. figure:: ./images/TrajectoryDiagram.svg
     :width: 650px
     :alt: depiction of the T-shirt cannon launch problem
     :align: center
@@ -22,7 +22,7 @@ Therefore, your goal is to maximize the range that your T-shirt can travel, whic
 If you recall the process of :doc:`formulating an optimization problem <../../ingredients/formulating/formulating>`, we need to translate the real-world problem into a mathematical formulation by identifying the objective function, constraints, and design variables. 
 Generally, this projectile launching problem can be formulated as shown below:
 
-.. figure:: images/TrajOptProblem.svg
+.. figure:: ./images/TrajOptProblem.svg
     :width: 325px
     :alt: description of the problem formulation for maximizing the distance of a projectile
     :align: center
@@ -43,7 +43,7 @@ This is where assumptions are made about how the laws of physics affect the prob
 - A constraint for this problem is that the T-shirt is launched from an already designed cannon, which means that it has a fixed initial speed. While this could potentially be a design variable, it is excluded here
 - Given that the speed is fixed, the design variable is the launch angle of the projectile :math:`\theta`
 
-.. figure:: images/TrajectoryProblemModel.svg
+.. figure:: ./images/TrajectoryProblemModel.svg
     :width: 650px
     :alt: trajectory of a projectile model for the first problem scenario
     :align: center
