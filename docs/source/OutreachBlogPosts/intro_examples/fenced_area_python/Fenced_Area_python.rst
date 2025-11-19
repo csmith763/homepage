@@ -10,9 +10,9 @@
 .. role:: optblue
     :class: optblue
 
-==================================
-Fenced Area Python Application
-==================================
+=========================
+Fenced Area - Python Demo
+=========================
 
 Now that you have an idea of the approach to solve basic optimization problems, the next step is utilizing the most common way to create an optimization solution: code.  
 
@@ -71,13 +71,67 @@ These are the main inputs to the minimize function. There are some optional inpu
    
    This stands for Sequential Least Squares Quadratic Programming. This is a method of optimization that approximates the non-linear function using a quadratic function. Using this approximation, it then iteratively solves a series of problems and with a gradient-based approach, slowly arrives at the final answer.  
 
-Now that you have gained an understanding of the operation of minimize, try it out for yourself by changing the code where it says "EDIT THIS LINE".
+Now that you have gained an understanding of the operation of minimize, try it out for yourself by changing the lines of code below the "EDIT LINE BELOW" markers.
 
-JUPYTER NOTEBOOK Here
+.. replite::
+   :kernel: xpython
+   :height: 600px
 
-==================================
-Supplying The Derivative
-==================================
+   import matplotlib.pyplot as plt
+   import numpy as np
+
+   x = np.linspace(0, 2 * np.pi, 200)
+   y = np.sin(x)
+
+   fig, ax = plt.subplots()
+   ax.plot(x, y)
+   plt.show()
+
+.. replite:: 
+   :kernel: xpython
+   :width: 90%
+   :height: 400px
+
+   from scipy.optimize import minimize
+
+   # fixed perimeter 
+   P = 0 #EDIT THIS LINE
+
+   # objective: minimize negative area 
+   def objective(vars):
+      x, y = vars
+      f = x + y #EDIT THIS LINE 
+      return f  
+
+   # perimeter constraint: 
+   def perimeter_constraint(vars):
+      x, y = vars
+      g = x + y #EDIT THIS LINE
+      return g 
+
+   # initial guess 
+   x0 = [-1, 1] #EDIT THIS LINE
+
+   # constraint and bounds
+   cons = ({'type': 'eq', 'fun': perimeter_constraint})
+   bnds = [(-100, 100), (-100, 100)] #EDIT THIS LINE
+
+   # run optimizer
+   res = minimize(objective, x0, bounds=bnds, constraints=cons)
+
+   print(res)
+
+   if res.success:
+      x_opt, y_opt = res.x
+      print(f"Optimal x = {x_opt:.2f}, Optimal y = {y_opt:.2f}")
+      print(f"Maximum area = {x_opt * y_opt:.2f}")
+   else:
+      print("Optimization failed!")
+
+
+------------------------
+Supplying the Derivative
+------------------------
 
 Now that you have a basic comprehension of how to apply scipy.minimize, we can add some additional inputs that may be useful for other types of optimization problems. If you know how to take partial derivatives, this is a good next step into understanding optimization. As mentioned before, currently our code approximates a gradient using the finite different method. However, we can provide an exact analytical gradient using the Jacobian matrix.  
 

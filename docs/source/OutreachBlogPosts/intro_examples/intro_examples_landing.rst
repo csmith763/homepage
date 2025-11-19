@@ -9,3 +9,4 @@ This is the landing page for the optimization examples section. THIS IS INCOMPLE
 
     fenced_area/fenced_area
     trajectory/trajectory
+    fenced_area_python/Fenced_Area_python
