@@ -12,3 +12,4 @@ git+https://github.com/aaronyicongfu/jupyterlite-sphinx.git@main#egg=jupyterlite
 git+https://github.com/bonartm/sphinxcontrib-quizdown
 sphinx-exercise
 sphinx_togglebutton
+jupyterlite-pyodide-kernel
