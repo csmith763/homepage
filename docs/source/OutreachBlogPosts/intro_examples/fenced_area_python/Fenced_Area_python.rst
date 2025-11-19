@@ -74,7 +74,6 @@ These are the main inputs to the minimize function. There are some optional inpu
 Now that you have gained an understanding of the operation of minimize, try it out for yourself by changing the lines of code below the "EDIT LINE BELOW" markers.
 
 .. notebooklite:: max_area_fd.ipynb
-   :kernel: xpython
    :width: 100%
    :height: 500px
 
